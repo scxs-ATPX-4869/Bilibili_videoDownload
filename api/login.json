@@ -1,0 +1,37 @@
+{
+    "bili_ticket": {
+        "url": "https://api.bilibili.com/bapis/bilibili.api.ticket.v1.Ticket/GenWebTicket",
+        "params": {
+            "key_id": "ec02",
+            "hexsign": "hmac_sha256",
+            "context[ts]": "{int(time.time())}",
+            "csrf": "bili_jct"
+        },
+        "headers": true,
+        "method": "GET",
+        "return": {}
+    },
+    "spi": {
+        "url": "https://api.bilibili.com/x/frontend/finger/spi",
+        "method": "GET",
+        "verify": false,
+        "comment": "获取 buvid3 / buvid4"
+    },
+    "active": {
+        "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExClimbWuzhi",
+        "method": "POST",
+        "verify": false,
+        "json_body": true,
+        "data": "see https://github.com/SocialSisterYi/bilibili-API-collect/issues/933",
+        "_comment": "激活 buvid3"
+    },
+    "check": {
+        "url": "https://api.bilibili.com/x/space/user/setting/list",
+        "method": "GET",
+        "headers": {
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+            "cookie": "str cookie"
+        },
+        "_comments": "检查当前cookie是否可用。如果返回的内容中 code 不是0，或者 message 不是0，则需要重新登录"
+    }
+}

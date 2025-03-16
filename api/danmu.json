@@ -1,0 +1,18 @@
+{
+    "danmu": {
+        "url": "https://api.bilibili.com/x/v2/dm/wbi/web/seg.so",
+        "params": {
+            "type": "int 1",
+            "oid": "int cid号",
+            "pid": "int av号",
+            "segment_index": "int 分片编号"
+        },
+        "method": "GET",
+        "cookie_demand": null,
+        "headers": null,
+        "verify": false,
+        "wbi": true,
+        "return": "弹幕列表",
+        "_comments": "使用protubuf解析"
+    }
+}
